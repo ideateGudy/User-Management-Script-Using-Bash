@@ -23,7 +23,7 @@ chmod 700 /var/secure
 
 # Create secure passwords file
 PASSWORD_FILE="/var/secure/user_passwords.txt"
-echo "USERNAME	|	PASSWORD" > "$PASSWORD_FILE"
+echo "USERNAME, PASSWORD" > "$PASSWORD_FILE"
 echo "---------------------------------------------" >> "$PASSWORD_FILE"
 chmod 600 "$PASSWORD_FILE"
 
@@ -71,7 +71,7 @@ while IFS=';' read -r username groups; do
     # Generate, set and store password securely
     password=$(openssl rand -base64 12)
     echo "$username:$password" | chpasswd
-    echo "$username	|	$password" >> "$PASSWORD_FILE"
+    echo "$username,$password" >> "$PASSWORD_FILE"
 
 
 
