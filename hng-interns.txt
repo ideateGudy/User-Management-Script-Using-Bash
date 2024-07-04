@@ -1,0 +1,3 @@
+light; engineering,marketing,drama
+idimma; drama,product
+mayowa; hng-premium,design
